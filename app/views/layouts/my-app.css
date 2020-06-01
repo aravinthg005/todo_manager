@@ -32,7 +32,17 @@ p{
 }
 
 section {
+    background: rgb(198, 255, 105);
     margin-top: 48px;
     margin-bottom: 32px;
     margin-left: 32px;
+    padding: 32px;
+}
+
+
+article {
+    #background: greenyellow;
+    height: 400px;
+    display: flex;
+    width: 1000px;
 }
