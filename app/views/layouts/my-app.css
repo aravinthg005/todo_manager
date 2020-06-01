@@ -7,8 +7,9 @@ body {
 
 h1{
     font-size: 48px;
-    line-height: 3px;
+    line-height: 1.8px;
     color: #453c52;
+    padding: 32px;
 }
 
 h2{
