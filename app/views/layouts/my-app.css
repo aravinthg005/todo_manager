@@ -5,14 +5,14 @@ body {
     margin: 48px auto;
 }
 
-h1{
+.TodoPage-title{
     font-size: 48px;
     line-height: 1.8px;
     color: #453c52;
     padding: 32px;
 }
 
-h2{
+.TodoSection-title{
     font-size: 34px;
     line-height: 1.6px;
     color: #453c52;
