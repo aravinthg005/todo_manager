@@ -1,0 +1,11 @@
+<h1> This is TODO list </h1> 
+
+<p> The time is :<%= DateTime.now.to_s(:long)%>
+<h2>Total count of todo: <%=Todo.count%>
+
+<% Todo.all.each do |todo| %>
+<div style = "display: flex; allign-items: center;">
+  <p style = "color: blue; fony-size: 32px;margin-right: 32px;"><%= todo.todo_txt %> </p>
+  <p> <%=todo.due_date %></p> 
+</div>
+<%end%>

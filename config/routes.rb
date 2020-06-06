@@ -7,11 +7,10 @@ Rails.application.routes.draw do
   post "/signin", to: "sessions#create", as: :sessions
   delete "/signout", to: "sessions#destroy", as: :destroy_session
   get "/", to: "home#index"
-  
-  
+
   #FOR TODOS
-  get "todos", to: "todos#index" 
-  post "todos/create", to: "todos#create"
+  get "todos", to: "todos#index"
+  get "todos/create", to: "todos#create"
   get "todos/:id", to: "todos#show"
   #using convention
   resources :todos
