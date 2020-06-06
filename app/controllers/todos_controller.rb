@@ -23,7 +23,7 @@ class TodosController < ApplicationController
   end
 
   def update
-    id = person[:id]
+    id = params[:id]
     completed = params[:completed]
     todo = Todo.find(id)
     todo.completed = completed
