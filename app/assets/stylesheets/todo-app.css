@@ -1,128 +1,148 @@
 body {
+    margin: 0 auto;
     font-family: sans-serif;
     max-width: 600px;
-    margin: 0 auto;
-    margin-top: 60px;
 }
 
-.TodoPage-title {
+.TodoPage__title {
+    font-family: OpenSans-Semibold;
     font-size: 20px;
-    font-weight: 600;
     color: #453C52;
     letter-spacing: 0.14px;
-    margin-bottom: 12px;
 }
 
-.AddTodo {
+.TodoMain {}
+
+.Todo {
     display: inline-flex;
-    margin-bottom: 21px;
 }
 
-.AddTodo-text {
+.Todo__text {
     background: #FFFFFF;
     border: 1px solid #BFB8CC;
     border-radius: 4px;
     border-radius: 4px;
-}
-
-.AddTodo-text::placeholder {
+    padding: 10px;
+    font-family: OpenSans;
     font-size: 14px;
     color: #726A7E;
     letter-spacing: 0.1px;
-    padding: 6px 95px 7px 12px;
 }
 
-.AddTodo-date {
-    margin-left: 10px;
+.Todo__date {
     background: #FFFFFF;
     border: 1px solid #BFB8CC;
     border-radius: 4px;
     border-radius: 4px;
+    margin-left: 10px;
+    padding: 10px;
+    color: #726A7E;
+    font-family: OpenSans-Semibold;
 }
 
-.AddTodo-button {
-    margin-left: 11px;
+.Todo__add {
+    margin-left: 10px;
     background: #48BB78;
     border-radius: 4px;
-    padding: 7px 22px 7px 22px;
+    font-family: OpenSans-Semibold;
     font-size: 14px;
+    padding: 10px;
     color: #FFFFFF;
     letter-spacing: 0.1px;
     border: #48BB78;
     opacity: 0.9;
 }
 
-.TodoSectionTitle {
+.Todos {}
+
+.Todos__due {
     display: flex;
-    margin-top: 3px;
-    margin-bottom: 13px;
+    margin-top: 15px;
     align-items: center;
 }
 
-.TodoSectionTitle-title {
+.TodoDue__title {
+    font-family: OpenSans-Semibold;
     font-size: 14px;
-    font-weight: 600;
     color: #453C52;
     letter-spacing: 0.1px;
 }
 
-.TodoSectionTitle-remainingCount {
-    margin-left: 8px;
+.TodoDue__remaining {
+    font-family: OpenSans;
     font-size: 12px;
     color: #453C52;
+    margin-left: 15px;
     letter-spacing: 0.09px;
+    align-items: center;
 }
 
-.TodoItem {
+.TodoList {
+    margin: 0;
+    padding: 0;
+    border: none;
+    list-style-type: none;
+}
+
+.TodoList__todos {
     display: flex;
     align-items: center;
-    margin-bottom: 22px;
     margin-left: 20px;
 }
 
-.TodoItem-checkBox {
+.TodoList__todos-text {
+    font-family: OpenSans;
+    font-size: 14px;
+    color: #453C52;
+    margin-left: 10px;
+    letter-spacing: 0.1px;
+}
+
+.TodoList__todos-text-completed {
+    font-family: OpenSans;
+    font-size: 14px;
+    color: #453C52;
+    margin-left: 10px;
+    letter-spacing: 0.1px;
+    text-decoration: line-through;
+}
+
+.TodoList__todos:hover {
+    background: #F1EDF7;
+    border-radius: 4px;
+    border-radius: 4px;
+}
+
+.TodoList__todos-checkbox {
     background: #FFFFFF;
     border: 1px solid #BFB8CC;
     border-radius: 4px;
     border-radius: 4px;
 }
 
-.TodoItem-todoText {
-    padding-left: 8px;
-    padding-top: 8px;
-    font-size: 14px;
-    color: #453C52;
-    letter-spacing: 0.1px;
+.TodoList__todos-remove {
+    max-width: 15px;
+    max-height: 20px;
+    margin-left: 10px;
+    visibility: hidden;
 }
 
-.TodoItem-overdueLabel {
-    padding-left: 10px;
-    padding-top: 8px;
+.TodoList__todos:hover .TodoList__todos-remove {
+    visibility: visible;
+}
+
+.TodoList__todos-overdue {
+    font-family: OpenSans;
     font-size: 12px;
+    margin-left: 10px;
     color: #C53030;
     letter-spacing: 0.09px;
 }
 
-.TodoItem-delete {
-    max-height: 15px;
-    max-width: 15px;
-    margin-left: 21.2px;
-    visibility: hidden;
-}
-
-.TodoItem:hover {
-    background: #F1EDF7;
-    border-radius: 5px;
-}
-
-.TodoItem:hover .TodoItem-delete {
-    visibility: visible;
-}
-
-.TodoItem-date {
-    padding-top: 6px;
-    padding-left: 10px;
+.TodoList__todos-dueDate {
+    font-family: OpenSans;
     font-size: 12px;
     color: #726A7E;
+    margin-left: 10px;
     letter-spacing: 0.09px;
 }
