@@ -1,23 +1,33 @@
 <section class="Todos">
     <div class="Todos__due">
-        <p class="TodoDue__title"><b><%= section_title  %></b></p>
-        <p class="TodoDue__remaining"><%= completed_count  %>/<%= total_count  %></p>
+        <p class="TodoDue__title"> <b> <%= section_title  %> </b> </p>
+        <p class="TodoDue__remaining"> <%= completed_count  %>/<%= total_count  %> </p>
     </div>
 
-     <% todos.each do |todo|%>
+     <% todos.each do |todo| %>
         <ul class="TodoList">
             <li class="TodoList__todos">
-                <input type="checkbox" class="TodoList__checkbox" <%= todo.completed ? "checked" : "" %> />
-
-                <p class=<%= todo.completed ? "TodoList__todos-text-completed" : "TodoList__todos-txt" %>><%= todo.todo_txt  %></p>
+                <%= form_with(url: "/todos/#{todo.id}", method: "put") do %>
+                    <%= check_box_tag "completed", "yes",
+                                        todo.completed,
+                                        class: "TodoList-checkbox",
+                                        :onclick=>"submit()" 
+                    %>
+                <% end %>
+                <p class=<%= todo.completed ? "TodoList__todos-text-completed" : "TodoList__todos-text" %>>
+                    <%= todo.todo_txt  %>
+                </p>
                 
                 <% if show_date %>
-                    <p class="TodoList__todos-dueDate"><%=todo.due_date.to_s(:short)%></p>
+                    <p class="TodoList__todos-dueDate"> <%= todo.due_date.to_s(:short) %> </p>
                 <% end %>
-                
-                <img src="trash-can-outline.png" class="TodoList__todos-remove">
+            
+                <%= form_with(url: "/todos/#{todo.id}", method: "delete") do %>
+                    <%= image_submit_tag("trash-can-outline.png",
+                                        class: "TodoList__todos-remove")
+                    %>
+                <% end %>
             </li>
         </ul> 
     <% end %>
-    
 </section>

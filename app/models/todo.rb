@@ -1,7 +1,7 @@
 class Todo < ActiveRecord::Base
   def to_pleasant_string
     is_completed = completed ? "[X]" : "[ ]"
-    "#{id}. #{due_date.to_s(:long)} #{todo_text} #{is_completed}"
+    "#{id}. #{due_date.to_s(:long)} #{todo_txt} #{is_completed}"
   end
 
   def due_today?
@@ -15,7 +15,7 @@ class Todo < ActiveRecord::Base
   def to_displayable_string
     display_status = completed ? "[X]" : "[ ]"
     display_date = due_today? ? nil : due_date
-    "#{id}. #{display_status} #{todo_text} #{display_date}"
+    "#{id}. #{display_status} #{todo_txt} #{display_date}"
   end
 
   def self.overdue
